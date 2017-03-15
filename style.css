@@ -44,7 +44,7 @@ h2:hover {
     font-size: 80%;
     list-style: none;
     float: right;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 a {
@@ -60,4 +60,21 @@ a:hover {
     font-size: 80%;
     list-style: none;
     float: left;
+    margin-right: 20px;
+}
+
+
+
+#about_text {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    font-size: 75%;
+}
+
+#portfolio_text {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    font-size: 75%;
 }
