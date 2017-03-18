@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- gen. -->
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta name = "description" content = "personal website">
+        <meta name = "author" content = "sami sahnoune" />
+        <meta name = "keywords" content = "sami sahnoune portfolio" />
+        <title> Sami Sahnoune - Portfolio </title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel = "icon" href = "icon.png">
+        
+        <!-- css. -->
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+        
+        <script src= "https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+        <!-- og. -->
+        <meta property="og:url"           content="www.samisa.me" />
+        <meta property="og:title"         content="Sami Sahnoune - Portfolio" />
+        <meta property="og:description"   content="mcgill" />
+        <meta property="og:image"         href= "min.png" />
+        <meta property="og:type"          content="portfolio" />
+    </head>
+    <body>
+        <div id = "portfolio_text">
+                Through school and personal projects, I have developed a wide skillset. Below are some projects I've worked on:
+                <div class = "projects">
+                    <ul>
+                        <li>SOTER </li>
+                        <div> SOTER is an application built during the 2017 Concordia University ConUHacks Hackathon. Was built using Android.</div>
+
+                        <li> EPOCH</li>
+                        <div> EPOCH is a Chrome extension built to motivate users while browsing the web. New tab pages things and stuff.</div>
+                        <li> CONVOLUTE </li>
+                        <div> Convolute is a thing. Try it here.</div>
+                        <li> more &rarr; </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        <script type = "text/javascript">
+             $('.projects li').click(function(){
+                $('.projects div').slideToggle('slow');
+            });
+        </script>
+    </body>
+</html>
