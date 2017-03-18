@@ -14,6 +14,8 @@
         
         <!-- css. -->
         <link rel = "stylesheet" type = "text/css" href = "style.css">
+        
+        <script src= "https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!-- og. -->
         <meta property="og:url"           content="www.samisa.me" />
@@ -27,49 +29,27 @@
         <!-- text container - content  -->
         <div id = "container">
             <h2> Sami Sahnoune </h2>
-            <p>Hello. I'm Sami, a second year undergraduate student at McGill University in Montreal, QC. I study Physics and Computer Science, and am extremely interested in space, technology, and data. </p>
+            <p>Hello. I'm Sami, a second year undergraduate student at McGill University in Montreal, QC studying Physics and Computer Science. I am extremely interested in space, technology, and data. </p>
             <br>
-            <p>I am currently searching for an internship in tech for summer 2017.</p>
+            <p>I am currently a Systems Engineering intern at NASA Johnson Space Center in Houston, Texas.</p>
             <br>
             
             <!-- contact -->
             <ul id = "social">
                 <a href = "https://www.facebook.com/samiwsahn" target = "_blank"><li> facebook </li></a>
                 <a href = "mailto:sami.sahnoune@mail.mcgill.ca" target = "_blank"><li> email </li></a>
+                <a href = "https://www.github.com/samisahn" target = "_blank"><li> github </li></a>
                 <a href = "https://www.linkedin.com/in/samisahnoune" target = "_blank"><li> linkedin </li></a>
                 <a href = "resume_sami.pdf" target = "_blank"><li> resume </li></a>
             </ul>
             
             <ul id = "me">
-                <li id = "about"> about </li>
-                <li> portfolio </li>
+                <a href = "portfolio.html"> <li id = "portfolio"> portfolio </li></a>
+               
             </ul>
-            <div id = "about_text">
-                Having previous internship experience, I am a hard-worker and dedicated learner.
-            </div>
-            <div id = "portfolio_text">
-                Having previous internship experience, I am a hard-worker and dedicated learner.
-            </div>
+<!--
             
-            
+-->
         </div>
-        <script type = "text/javascript">
-            window.onload = function() {
-                scripts();
-            };
-            
-            function scripts(){
-                var list = document.getElementById('me');
-                var li = list.getElementsByTagName('li');
-                li[0].addEventListener('click', function(){
-                    if(document.getElementById("about_text").style.display = "none"){
-                        document.getElementById("about_text").style.display = "block";
-                    }
-                    else if (document.getElementById("about_text").style.display = "block"){
-                        document.getElementById("about_text").style.display = "none";
-                    }
-                });
-            }
-        </script>
     </body>
 </html>
