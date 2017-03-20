@@ -34,11 +34,6 @@ h2:hover {
     cursor: default;
 }
 
-#social {
-    bottom: 0;
-    right: 0;
-}
-
 #social li {
     font-size: 80%;
     list-style: none;
@@ -98,6 +93,39 @@ a:hover {
 }
 .projects div{
     display:none;
+}
+
+@media only screen and (max-width: 680px) {
+    #container {
+        width: 95%;
+        text-align: center;
+    }
+    
+    #container p {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    #me li {
+        display: inline;
+        text-align: justify;
+    }
+    
+    #portfolio {
+        position: relative;
+        bottom: -10px;
+    }
+    
+    #social {
+        font-size: 80%;
+        position: relative;
+        bottom: -50px;
+    }
 }
 
 
