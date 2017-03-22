@@ -18,8 +18,11 @@ html, body {
     font-weight: 800;
     display: block;
     text-align: justify;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 50%;
-    margin: 10% auto;
     padding: 0 10px;
     height: 25%;
 }
@@ -29,7 +32,7 @@ h2 {
     display: inline-block;
 }
 
-h2:hover {
+h2:hover {  
     text-decoration: underline;
     cursor: default;
 }
@@ -86,6 +89,7 @@ a:hover {
     padding: 5px;
     margin-right: 20px;
     transition: 0.2s;
+    
 }
 
 .projects ul li:hover {
@@ -95,7 +99,11 @@ a:hover {
     display:none;
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 840px) {
+    html, body {
+        font-weight: 100;    
+    }
+    
     #container {
         width: 95%;
         text-align: center;
@@ -111,12 +119,8 @@ a:hover {
         text-align: center;
     }
     
-    #me li {
-        display: inline;
-        text-align: justify;
-    }
-    
-    #portfolio {
+    #me {
+        font-size: 80%;
         position: relative;
         bottom: -10px;
     }
@@ -124,7 +128,7 @@ a:hover {
     #social {
         font-size: 80%;
         position: relative;
-        bottom: -50px;
+        bottom: -10px;
     }
 }
 
