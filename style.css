@@ -42,6 +42,7 @@ h2:hover {
     list-style: none;
     float: right;
     margin-left: 20px;
+    z-index: 9999;
 }
 
 a {
@@ -102,6 +103,7 @@ a:hover {
 @media only screen and (max-width: 840px) {
     html, body {
         font-weight: 100;    
+        position: absolute;
     }
     
     #container {
@@ -126,6 +128,7 @@ a:hover {
     }
     
     #social {
+        z-index: 9999;
         font-size: 80%;
         position: relative;
         bottom: -10px;
