@@ -31,11 +31,12 @@
                     <div class = "projects">
                         <ul>
                             <li> SOTER </li>
-                            <div> SOTER is an application built during the 2017 Concordia University ConUHacks Hackathon. Was built using Android.</div>
+                            <div> SOTER is an Android application built during the 2017 Concordia University ConUHacks Hackathon. Over the course of the weekend, we developed an introductory prototype of a security app. <br><br> 
+                                Read more about it <a href = "https://devpost.com/software/soter-io" target = "_blank">here</a>.</div>
                             <li> EPOCH</li>
-                            <div> EPOCH is a Chrome extension built to motivate users while browsing the web. New tab pages things and stuff.</div>
+                            <div> EPOCH is a new-tab Chrome extension built to motivate myself while browsing the web. This project expanded my interest in web design and APIs.</div>
                             <li> CONVOLUTE </li>
-                            <div> Convolute is a thing. Try it here.</div>
+                            <div> Convolute is a Python filtering program hosted on the web. Given a bitmap image, a filter is applied using a convolution matrix. Try it <a href = "http://cs.mcgill.ca/~ssahno/A5Q3_template.html" target = "_blank">here</a>.</div>
                             <li> more &rarr; </li>
                         </ul>
 
@@ -45,9 +46,14 @@
         <script type = "text/javascript">
              $('.projects li').click(function(e){
                 if(($(this).index()%2 == 0)){
-                    console.log($(this).index());
-                    $('.projects div:eq(' + ($(this).index()) +')').slideToggle('slow');
-                    console.log($(this).index() + 1);
+                    $('.projects div:eq('+ $(this).index()/2 +')').slideToggle('slow');
+                }
+                 console.log($(this).css("background-color"));
+                if(($(this).css("background-color") != "rgb(149, 165, 166)")){
+                    $(this).css("background-color", "rgb(149, 165, 166)");
+                }
+                else {
+                    $(this).css("background-color", "#ecf0f1");
                 }
             });
         </script>
