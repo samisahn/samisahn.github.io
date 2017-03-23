@@ -90,14 +90,19 @@ a:hover {
     padding: 5px;
     margin-right: 20px;
     transition: 0.2s;
-    
 }
 
 .projects ul li:hover {
     background-color: white;
 }
-.projects div{
-    display:none;
+
+.projects ul div {
+    font-size: 80%;
+    display: none;
+    cursor: pointer;
+    list-style: none;
+    width: 100%;
+    margin: 20px auto;
 }
 
 @media only screen and (max-width: 840px) {
