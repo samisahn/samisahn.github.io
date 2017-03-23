@@ -30,9 +30,8 @@
                     Through school and personal projects, I have developed a wide skillset. Below are some projects I've worked on:
                     <div class = "projects">
                         <ul>
-                            <li>SOTER </li>
+                            <li> SOTER </li>
                             <div> SOTER is an application built during the 2017 Concordia University ConUHacks Hackathon. Was built using Android.</div>
-
                             <li> EPOCH</li>
                             <div> EPOCH is a Chrome extension built to motivate users while browsing the web. New tab pages things and stuff.</div>
                             <li> CONVOLUTE </li>
@@ -44,8 +43,12 @@
                 </div>
         </div>
         <script type = "text/javascript">
-             $('.projects li').click(function(){
-                $('.projects div').slideToggle('slow');
+             $('.projects li').click(function(e){
+                if(($(this).index()%2 == 0)){
+                    console.log($(this).index());
+                    $('.projects div:eq(' + ($(this).index()) +')').slideToggle('slow');
+                    console.log($(this).index() + 1);
+                }
             });
         </script>
     </body>
