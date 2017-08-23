@@ -1,3 +1,0 @@
-# samisahn.github.io
-
-me
