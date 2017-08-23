@@ -56,12 +56,12 @@
             
             #about_me {
                 height: 100vh;
-                background-color: #e74c3c;
+                background-color: #EC644B;
                 position: relative;
             }
             
             #about_me_info {
-                width: 60%;
+                width: 70%;
                 color: white;
                 text-align: center;
                 font-size: 5vh;
@@ -76,8 +76,53 @@
                filter: invert(1);
             }
             
-        
+            #work {
+                height: 100vh;
+                background-color: #81CFE0;
+                position: relative;
+            }
+            
+            #work_info {
+                width: 70%;
+                color: black;
+                text-align: center;
+                font-size: 5vh;
+                position: absolute;
+                top: 50%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+            }
+            
+            #menu {
+                margin-top: 15vh;
+                text-align: center;
+                font-size: 2.5vh;
+                /* change this */
+                margin-right: 2.5vw;
+                float: right;
+                list-style: none;
+            }
+            
+            #menu li {
+                padding: 1vh;
+                list-style: none;
+            }
+            
+            #menu li:hover {
+                border-bottom: 1px solid #7f8c8d;
+                cursor: pointer;
+            }
         </style>
+        <div id = "menu">
+            <ul>
+                <li> home </li>
+                <li> me </li>
+                <li> education </li>
+                <li> work </li>
+                <li> projects </li>
+                <li> contact </li>
+            </ul>
+        </div>
         <div id = "header">
             <img src = "me.png" class = "pic" id = "icon">
             <img src = "caret.png" class = "pic" id = "search">
@@ -88,26 +133,21 @@
         <section id = "about_me">
             <p id = "about_me_info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
         </section>
+        <section id = "work">
+            <p id = "work_info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
+        </section>
     </body>
     <script>
         console.log(document.getElementsByTagName("section").length);
-        var topofDiv = $("#header").offset().top;
-        var height = $("#header").outerHeight();
+        var topofDiv = $("section").offset().top;
+        var height = $("section").outerHeight();
         $(window).scroll(function(){
-            if($(window).scrollTop() > (topofDiv + height)){
+            if($(window).scrollTop() > (topofDiv + height) - 50){
                $("img").addClass("invert");
             }
             else {
                 $("img").removeClass("invert");
             }
         });
-//        $(window).scroll(function(){
-//        if($(window).scrollTop() > (topofDiv + height)){
-//               $("#header-2").show();
-//            }
-//        else{
-//               $("#header-2").hide();
-//            }
-//        });
     </script>
 </html>
