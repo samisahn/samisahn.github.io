@@ -4,6 +4,7 @@
         <title> Sami Sahnoune </title>
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="icon" href="me.png">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     </head>
     <body>
         <style>
@@ -27,7 +28,10 @@
             }
             
             #header {
-                height: 20%;
+                position: fixed;
+                z-index: 1;
+                height: 15%;
+                width: 100%;
             }
             
             #icon {
@@ -46,13 +50,64 @@
                 margin-top: 8vh;
             }
             
+            #home {
+                height: 100%;
+            }
+            
+            #about_me {
+                height: 100vh;
+                background-color: #e74c3c;
+                position: relative;
+            }
+            
+            #about_me_info {
+                width: 60%;
+                color: white;
+                text-align: center;
+                font-size: 5vh;
+                position: absolute;
+                top: 50%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+            }
+            
+            .invert {
+               -webkit-filter: invert(1);
+               filter: invert(1);
+            }
+            
+        
         </style>
-        <section id = "header">
-            <img src = "me.png" id = "icon">
-            <img src = "caret.png" id = "search">
-        </section>
+        <div id = "header">
+            <img src = "me.png" class = "pic" id = "icon">
+            <img src = "caret.png" class = "pic" id = "search">
+        </div>
         <section id = "home">
             <p id = "hi"> hi, i'm sami </p>
         </section>
+        <section id = "about_me">
+            <p id = "about_me_info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
+        </section>
     </body>
+    <script>
+        console.log(document.getElementsByTagName("section").length);
+        var topofDiv = $("#header").offset().top;
+        var height = $("#header").outerHeight();
+        $(window).scroll(function(){
+            if($(window).scrollTop() > (topofDiv + height)){
+               $("img").addClass("invert");
+            }
+            else {
+                $("img").removeClass("invert");
+            }
+        });
+//        $(window).scroll(function(){
+//        if($(window).scrollTop() > (topofDiv + height)){
+//               $("#header-2").show();
+//            }
+//        else{
+//               $("#header-2").hide();
+//            }
+//        });
+    </script>
 </html>
