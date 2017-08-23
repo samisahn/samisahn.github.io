@@ -3,6 +3,7 @@
     <head>
         <title> Sami Sahnoune </title>
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="icon" href="me.png">
     </head>
     <body>
         <style>
@@ -13,16 +14,45 @@
             }
             
             body {
+                height: 100vh;
                 font-family: "Lato Light", "Lato", sans-serif;
             }
             
             #hi {
+                font-size: 5vh;
                 position: absolute;
                 top: 50%;
                 left: 50%;                
                 transform: translate(-50%, -50%);
             }
+            
+            #header {
+                height: 20%;
+            }
+            
+            #icon {
+                cursor: pointer;
+                height: 6vh;
+                margin-left: 5vw;
+                margin-top: 5vh;
+                
+            }
+            
+            #search{
+                cursor: pointer;
+                height: 2vh;
+                float: right;
+                margin-right: 5vw;
+                margin-top: 8vh;
+            }
+            
         </style>
-        <p id = "hi"> hi, i'm sami </p>
+        <section id = "header">
+            <img src = "me.png" id = "icon">
+            <img src = "caret.png" id = "search">
+        </section>
+        <section id = "home">
+            <p id = "hi"> hi, i'm sami </p>
+        </section>
     </body>
 </html>
