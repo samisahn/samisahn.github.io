@@ -103,6 +103,36 @@
                 position: relative;
             }
             
+            #contact_info {
+                width: 70%;
+                font-size: 5vh;
+                position: absolute;
+                text-align: center;
+                top: 40%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+            }
+            
+            #social {
+                width: 70%;
+                font-size: 5vh;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 47.5%;                
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+
+            #social, #social li {
+                list-style: none;
+                display: inline;
+                margin-left: 2vw;
+            }
+            
+            li img {
+                height: 5vh;
+            }
         </style>
         <div id = "menu">
             <ul>
@@ -127,10 +157,16 @@
             <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
         </section>
         <section id = "projects">
-            <p id = "projects_info" class = "info"> The projects section.</p>
+            <p id = "projects_info" class = "info"> Different</p>
         </section>
         <section id = "contact">
             <p id = "contact_info" class = "info"> Contact me! </p>
+            <ul id = "social">
+                <li><a href = "mailto:sami.sahnoune@mail.mcgill.ca" target = "_blank"><img src="email.png"></a></li>
+                <li><a href = "https://www.linkedin.com/in/samisahnoune" target = "_blank"><img src="linkedin.png"></a></li>
+                <li><a href = "https://www.facebook.com/samiwsahn" target = "_blank"><img src="facebook.png"></a></li>
+                <li><a href = "resume.pdf"><img src="resume.png" target = "_blank"></a></li>
+            </ul>
         </section>
     </body>
     <script>
@@ -170,8 +206,6 @@
                 scrollTop: $('#'+$(this).text()).offset().top}, 750);
             $("#menu").slideToggle(500);
         });
-        
-
         
     </script>
 </html>
