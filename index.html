@@ -24,12 +24,12 @@
                 display: none;
                 position: fixed;
                 z-index: 1;
-                top: 15vh;
+                top: 12.5vh;
                 text-align: center;
                 font-size: 3vh;
                 /* change this */
+                width: 6vw;
                 right: 3vw;
-                
                 list-style: none;
             }
             
@@ -43,14 +43,16 @@
                 cursor: pointer;
             }
             
-            #hi {
+            .info {
+                width: 70%;
                 font-size: 5vh;
                 position: absolute;
+                text-align: center;
                 top: 50%;
                 left: 50%;                
                 transform: translate(-50%, -50%);
             }
-            
+
             #header {
                 position: fixed;
                 z-index: 1;
@@ -69,30 +71,18 @@
             #search{
                 cursor: pointer;
                 height: 2vh;
+/*                width: 2vw;*/
                 float: right;
                 margin-right: 5vw;
                 margin-top: 8vh;
             }
             
-            #home {
-                height: 100%;
-            }
-            
             #me {
-                height: 100vh;
                 background-color: #EC644B;
-                position: relative;
             }
             
             #me_info {
-                width: 70%;
                 color: white;
-                text-align: center;
-                font-size: 5vh;
-                position: absolute;
-                top: 50%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
             }
             
             .invert {
@@ -100,55 +90,17 @@
                filter: invert(1);
             }
             
-            #work {
-                height: 100vh;
-/*                background-color: #81CFE0;*/
-                position: relative;
-            }
-            
-            #work_info {
-                width: 70%;
-                color: black;
-                text-align: center;
-                font-size: 5vh;
-                position: absolute;
-                top: 50%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-            }
-            
             #projects {
-                height: 100vh;
-                background-color: #81CFE0;
-                position: relative;
+                background-color: #3498db;
             }
             
             #projects_info {
-                width: 70%;
-                color: black;
-                text-align: center;
-                font-size: 5vh;
-                position: absolute;
-                top: 50%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
+                color: white;
             }
             
-            #contact {
+            section {
                 height: 100vh;
-/*                background-color: #81CFE0;*/
                 position: relative;
-            }
-            
-            #contact_info {
-                width: 70%;
-                color: black;
-                text-align: center;
-                font-size: 5vh;
-                position: absolute;
-                top: 50%;
-                left: 40%;                
-                transform: translate(-50%, -50%);
             }
             
         </style>
@@ -163,45 +115,63 @@
         </div>
         <div id = "header">
             <img src = "me.png" class = "pic" id = "icon">
-            <img src = "caret.png" class = "pic" id = "search" onclick = "menu()">
+            <img src = "caret.png" class = "pic" id = "search">
         </div>
         <section id = "home">
-            <p id = "hi"> hi, i'm sami </p>
+            <p id = "hi" class = "info"> hi, i'm <span style = "border-bottom: 2px solid #EC644B">sami</span> </p>
         </section>
         <section id = "me">
-            <p id = "me_info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
+            <p id = "me_info" class = "info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
         </section>
         <section id = "work">
-            <p id = "work_info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
+            <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
         </section>
         <section id = "projects">
-            <p id = "projects_info"> The projects section.</p>
+            <p id = "projects_info" class = "info"> The projects section.</p>
         </section>
         <section id = "contact">
-            <p id = "contact_info"> Contact me! </p>
+            <p id = "contact_info" class = "info"> Contact me! </p>
         </section>
     </body>
     <script>
-        console.log(document.getElementsByTagName("section").length);
+        $(document).ready(function () {
+            $("#hi").hide(0).delay(100).fadeIn(750);
+        });
+        
         var topofDiv = $("section").offset().top;
         var height = $("section").outerHeight();
+        var sections = document.getElementsByTagName("section");
+        
+        // sloppy, fix
+        var section_height = sections[0].offsetHeight;
         $(window).scroll(function(){
-            if($(window).scrollTop() > (topofDiv + height) - 50){
-               $("img").addClass("invert");
+            if(($(window).scrollTop() > ((0 + height) - 50) && $(window).scrollTop() < ((section_height + height) - 50)) || $(window).scrollTop() > ((2*section_height + height) - 50) && $(window).scrollTop() < ((3*section_height + height) - 50)){
+                $("img").addClass("invert");
+                $("#menu").addClass("invert");
             }
             else {
                 $("img").removeClass("invert");
+                $("#menu").removeClass("invert");
             }
         });
         
-        function menu(){
-            $("#menu").css("display", "block");
-        }
+        $("#search").click(function(){
+            $("#menu").slideToggle(500);
+        });
+        
+        $("#icon").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 700);
+        });
         
         $("#menu").on('click','li',function(){
             $('html, body').animate({
-                scrollTop: $('#'+$(this).text()).offset().top
-            }, 750);
+                scrollTop: $('#'+$(this).text()).offset().top}, 750);
+            $("#menu").slideToggle(500);
         });
+        
+
+        
     </script>
 </html>
