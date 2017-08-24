@@ -19,6 +19,30 @@
                 font-family: "Lato Light", "Lato", sans-serif;
             }
             
+            #menu {                
+                float: right;
+                display: none;
+                position: fixed;
+                z-index: 1;
+                top: 15vh;
+                text-align: center;
+                font-size: 3vh;
+                /* change this */
+                right: 3vw;
+                
+                list-style: none;
+            }
+            
+            #menu li {
+                padding: 1vh;
+                list-style: none;
+            }
+            
+            #menu li:hover {
+                color: gray;
+                cursor: pointer;
+            }
+            
             #hi {
                 font-size: 5vh;
                 position: absolute;
@@ -54,13 +78,13 @@
                 height: 100%;
             }
             
-            #about_me {
+            #me {
                 height: 100vh;
                 background-color: #EC644B;
                 position: relative;
             }
             
-            #about_me_info {
+            #me_info {
                 width: 70%;
                 color: white;
                 text-align: center;
@@ -78,7 +102,7 @@
             
             #work {
                 height: 100vh;
-                background-color: #81CFE0;
+/*                background-color: #81CFE0;*/
                 position: relative;
             }
             
@@ -93,48 +117,68 @@
                 transform: translate(-50%, -50%);
             }
             
-            #menu {
-                margin-top: 15vh;
+            #projects {
+                height: 100vh;
+                background-color: #81CFE0;
+                position: relative;
+            }
+            
+            #projects_info {
+                width: 70%;
+                color: black;
                 text-align: center;
-                font-size: 2.5vh;
-                /* change this */
-                margin-right: 2.5vw;
-                float: right;
-                list-style: none;
+                font-size: 5vh;
+                position: absolute;
+                top: 50%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
             }
             
-            #menu li {
-                padding: 1vh;
-                list-style: none;
+            #contact {
+                height: 100vh;
+/*                background-color: #81CFE0;*/
+                position: relative;
             }
             
-            #menu li:hover {
-                border-bottom: 1px solid #7f8c8d;
-                cursor: pointer;
+            #contact_info {
+                width: 70%;
+                color: black;
+                text-align: center;
+                font-size: 5vh;
+                position: absolute;
+                top: 50%;
+                left: 40%;                
+                transform: translate(-50%, -50%);
             }
+            
         </style>
         <div id = "menu">
             <ul>
-                <li> home </li>
-                <li> me </li>
-                <li> education </li>
-                <li> work </li>
-                <li> projects </li>
-                <li> contact </li>
+                <li>home</li>
+                <li>me</li>
+                <li>work</li>
+                <li>projects</li>
+                <li>contact</li>
             </ul>
         </div>
         <div id = "header">
             <img src = "me.png" class = "pic" id = "icon">
-            <img src = "caret.png" class = "pic" id = "search">
+            <img src = "caret.png" class = "pic" id = "search" onclick = "menu()">
         </div>
         <section id = "home">
             <p id = "hi"> hi, i'm sami </p>
         </section>
-        <section id = "about_me">
-            <p id = "about_me_info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
+        <section id = "me">
+            <p id = "me_info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
         </section>
         <section id = "work">
             <p id = "work_info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
+        </section>
+        <section id = "projects">
+            <p id = "projects_info"> The projects section.</p>
+        </section>
+        <section id = "contact">
+            <p id = "contact_info"> Contact me! </p>
         </section>
     </body>
     <script>
@@ -148,6 +192,16 @@
             else {
                 $("img").removeClass("invert");
             }
+        });
+        
+        function menu(){
+            $("#menu").css("display", "block");
+        }
+        
+        $("#menu").on('click','li',function(){
+            $('html, body').animate({
+                scrollTop: $('#'+$(this).text()).offset().top
+            }, 750);
         });
     </script>
 </html>
