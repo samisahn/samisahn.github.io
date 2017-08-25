@@ -188,11 +188,13 @@
 /*                text-align: left;*/
             }
             
+/*
             @media screen and (min-width: 20em) {
                 #gallery ul li {
                     width: 33.33333%;
                 }
             }
+*/
         </style>
         <div id = "menu">
             <ul>
@@ -277,6 +279,16 @@
             $('#search').toggleClass('rotate');
             $('#search').toggleClass('rotate2');
         });
+        $(window).resize(function() {
+            if ($(window).width() < 450)
+            {
+                $(".info").css({'font-size': '5vw'});
+            }
+            else {
+                $(".info").css({'font-size': '5vh'});
+            }
+        });
+        
         
     </script>
 </html>
