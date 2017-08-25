@@ -249,11 +249,11 @@
         var section_height = sections[0].offsetHeight;
         $(window).scroll(function(){
             if(($(window).scrollTop() > ((0 + height) - 50) && $(window).scrollTop() < ((section_height + height) - 50)) || $(window).scrollTop() > ((2*section_height + height) - 50) && $(window).scrollTop() < ((3*section_height + height) - 50)){
-                $("img").addClass("invert");
+                $("#header img").addClass("invert");
                 $("#menu").addClass("invert");
             }
             else {
-                $("img").removeClass("invert");
+                $("#header img").removeClass("invert");
                 $("#menu").removeClass("invert");
             }
         });
