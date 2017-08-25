@@ -91,10 +91,18 @@
             }
             
             #projects {
+                position: relative;
                 background-color: #3498db;
             }
             
             #projects_info {
+                width: 70%;
+                font-size: 5vh;
+                position: absolute;
+                text-align: center;
+                top: 20%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
                 color: white;
             }
             
@@ -123,6 +131,18 @@
                 transform: translate(-50%, -50%);
                 z-index: 1;
             }
+            
+            #gallery {
+                position: absolute;
+                height: 50vh;
+                width: 100%;
+                top: 35vh;
+/*                margin-top: 25%;*/
+/*                position: absolute;*/
+/*                text-align: center;*/
+                margin: 0 auto;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
 
             #social, #social li {
                 list-style: none;
@@ -130,8 +150,48 @@
                 margin-left: 2vw;
             }
             
+            .rotate {
+                transform: rotate(-180deg);
+                /*transform: rotate(180deg);*/
+                -webkit-transition:0.5s;
+                -moz-transition:0.5s;
+                -ms-transition:0.5s;
+                -o-transition:0.5s;
+                transition:0.5s;
+            }
+            .rotate2 {
+                transform: rotate(0deg);
+                -webkit-transition:0.5s;
+                -moz-transition:0.5s;
+                -ms-transition:0.5s;
+                -o-transition:0.5s;
+                transition:0.5s;
+            }
+            
             li img {
                 height: 5vh;
+            }
+            
+            #gallery ul {
+                margin: 0;
+                padding: 0;
+/*                padding: 3vw;*/
+                width: 100%;
+            }
+            
+            #gallery ul li{
+                list-style: none;
+/*                padding: 10vw;*/
+                display: inline-block;
+                width: 50%
+/*                width: 29vw;*/
+/*                text-align: left;*/
+            }
+            
+            @media screen and (min-width: 20em) {
+                #gallery ul li {
+                    width: 33.33333%;
+                }
             }
         </style>
         <div id = "menu">
@@ -145,7 +205,7 @@
         </div>
         <div id = "header">
             <img src = "me.png" class = "pic" id = "icon">
-            <img src = "caret.png" class = "pic" id = "search">
+            <img src = "caret.png" class = "pic rotate2" id = "search" >
         </div>
         <section id = "home">
             <p id = "hi" class = "info"> hi, i'm <span style = "border-bottom: 2px solid #EC644B">sami</span> </p>
@@ -157,7 +217,14 @@
             <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
         </section>
         <section id = "projects">
-            <p id = "projects_info" class = "info"> Different</p>
+            <p id = "projects_info" class = "info"> A few different projects I've worked on.</p>
+            <div id = "gallery">
+                <ul>
+                    <li> Soter </li>
+                    <li> Convolute </li>
+                    <li> Stuff </li>
+                </ul>
+            </div>
         </section>
         <section id = "contact">
             <p id = "contact_info" class = "info"> Contact me! </p>
@@ -165,7 +232,7 @@
                 <li><a href = "mailto:sami.sahnoune@mail.mcgill.ca" target = "_blank"><img src="email.png"></a></li>
                 <li><a href = "https://www.linkedin.com/in/samisahnoune" target = "_blank"><img src="linkedin.png"></a></li>
                 <li><a href = "https://www.facebook.com/samiwsahn" target = "_blank"><img src="facebook.png"></a></li>
-                <li><a href = "resume.pdf"><img src="resume.png" target = "_blank"></a></li>
+                <li><a href = "resume.pdf" target = "_blank"><img src="resume.png" target = "_blank"></a></li>
             </ul>
         </section>
     </body>
@@ -192,6 +259,8 @@
         });
         
         $("#search").click(function(){
+            $('#search').toggleClass('rotate');
+            $('#search').toggleClass('rotate2');
             $("#menu").slideToggle(500);
         });
         
@@ -205,6 +274,8 @@
             $('html, body').animate({
                 scrollTop: $('#'+$(this).text()).offset().top}, 750);
             $("#menu").slideToggle(500);
+            $('#search').toggleClass('rotate');
+            $('#search').toggleClass('rotate2');
         });
         
     </script>
