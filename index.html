@@ -175,18 +175,19 @@
                 padding: 0;
                 width: 100%;
                 font-size: 0;
-                margin-left: 5%;
+/*                margin-left: 5%;*/
             }
 
             #gallery ul li {
+                color: white;
                 padding: 2.5vh;
                 font-family: 'Montserrat', 'Lato Light', sans-serif;
                 text-align: center;
-                margin-right: 1%;
-                height: 50vh;
+                margin-left: 10%;
+                height: 25vh;
                 list-style: none;
                 display: inline-block;
-                width: 29%;
+                width: 20%;
                 font-size: 2vh;
                 background-color: rgba(255, 255, 255, 0.3);
             }
@@ -218,11 +219,14 @@
             <div id = "gallery">
                 <ul>
                     <li> 
-                        SOTER
-                        <br>THEEEEE<br>asdsada
+                        SOTER  
                     </li>
-                    <li> CONVOLUTE<br> ndnsadasd<br> ff</li>
-                    <li> STUFF </li>
+                    <li> 
+                        EPOCH
+                    </li>
+                    <li> 
+                        CONVOLUTE
+                    </li>
                 </ul>
             </div>
         </section>
@@ -277,15 +281,15 @@
             $('#search').toggleClass('rotate');
             $('#search').toggleClass('rotate2');
         });
-        $(window).resize(function() {
-            if ($(window).width() < 450)
-            {
-                $(".info").css({'font-size': '5vw'});
-            }
-            else {
-                $(".info").css({'font-size': '5vh'});
-            }
-        });
+//        $(window).resize(function() {
+//            if ($(window).width() < 450)
+//            {
+//                $(".info").css({'font-size': '5vw'});
+//            }
+//            else {
+//                $(".info").css({'font-size': '5vh'});
+//            }
+//        });
         
         
     </script>
