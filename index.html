@@ -30,7 +30,7 @@
                 font-size: 3vh;
                 /* change this */
                 width: 6vw;
-                right: 3vw;
+                right: 50px;
                 list-style: none;
             }
             
@@ -91,6 +91,22 @@
                filter: invert(1);
             }
             
+            #future {
+                position: relative;
+                background-color: #3498db;
+            }
+            
+            #future_info {
+                width: 70%;
+                font-size: 5vh;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+/*
             #projects {
                 position: relative;
                 background-color: #3498db;
@@ -106,6 +122,7 @@
                 transform: translate(-50%, -50%);
                 color: white;
             }
+*/
             
             section {
                 height: 100vh;
@@ -133,15 +150,6 @@
                 z-index: 1;
             }
             
-            #gallery {
-                position: absolute;
-                height: 50vh;
-                width: 100%;
-                top: 35vh;
-                margin: 0 auto;
-/*                background-color: rgba(255, 255, 255, 0.5);*/
-            }
-
             #social, #social li {
                 list-style: none;
                 display: inline;
@@ -169,28 +177,34 @@
             li img {
                 height: 5vh;
             }
-             
-            #gallery ul {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                font-size: 0;
-/*                margin-left: 5%;*/
+            
+/*
+            #gallery {
+                position: absolute;
+                text-align: justify;
+                top: 50%;
+                width: 75%;
+                left: 50%;                
+                transform: translate(-50%, -50%);
+                margin: 0 auto;
             }
-
+            
             #gallery ul li {
+                font-size: 3vh;
+                text-align: justify;
                 color: white;
-                padding: 2.5vh;
-                font-family: 'Montserrat', 'Lato Light', sans-serif;
-                text-align: center;
-                margin-left: 10%;
-                height: 25vh;
                 list-style: none;
-                display: inline-block;
-                width: 20%;
-                font-size: 2vh;
-                background-color: rgba(255, 255, 255, 0.3);
             }
+            
+            #project_title {
+                font-weight: 800;
+            }
+            
+            #gallery ul li p {
+                padding: 10px;
+                color: white;
+            }
+*/
         </style>
         <div id = "menu">
             <ul>
@@ -209,26 +223,38 @@
             <p id = "hi" class = "info"> hi, i'm <span style = "border-bottom: 2px solid #EC644B">sami</span> </p>
         </section>
         <section id = "me">
-            <p id = "me_info" class = "info"> My name is Sami Sahnoune, and I am a junior at McGill University studying Physics and Computer Science.</p>
+            <p id = "me_info" class = "info"> My name is Sami Sahnoune, and I am a rising junior at McGill University studying Physics and Computer Science.</p>
         </section>
         <section id = "work">
-            <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract.</p>
+            <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract working on an International Space Station stowage tool.</p>
         </section>
-        <section id = "projects">
-            <p id = "projects_info" class = "info"> A few different projects I've worked on.</p>
+        <section id = "future">
+            <p id = "future_info" class = "info"> My interests include data analysis and software development, and I am currently seeking a relevant internship opportunity for Summer 2018.
+<!--
             <div id = "gallery">
                 <ul>
                     <li> 
-                        SOTER  
+                        <span id = 'project_title'>SOTER</span>
+                        <p> 
+                            Soter is an Android application built during the 2017 Concordia University ConUHacks Hackathon. Over the course of the weekend, we developed an introductory prototype of a security app. Read more about it 
+                            <a href = "https://devpost.com/software/soter-io" target = "_blank">here</a>.
+                        </p>
                     </li>
                     <li> 
-                        EPOCH
+                        <span id = 'project_title'>EPOCH</span>
+                        <p>
+                            Epoch is a new-tab Chrome extension built to motivate myself while browsing the web. This project expanded my interest in web design and APIs.
+                        </p>
                     </li>
-                    <li> 
-                        CONVOLUTE
+                    <li>
+                        <span id = 'project_title'>CONVOLUTE</span>
+                        <p>
+                            Convolute is a Python filtering program hosted on the web. Given a bitmap image, a filter is applied using a convolution matrix. Try it <a href = "http://cs.mcgill.ca/~ssahno/A5Q3_template.html" target = "_blank">here</a>.
+                        </p>
                     </li>
                 </ul>
             </div>
+-->
         </section>
         <section id = "contact">
             <p id = "contact_info" class = "info"> Contact me! </p>
@@ -241,6 +267,18 @@
         </section>
     </body>
     <script>
+        $(document).ready(function () {
+            console.log($(window).width());
+        });
+        if ($(window).width() < 450)
+            {
+                console.log('Hello');
+                $(".info").css({'font-size': '5vw'});
+            }
+            else {
+                $(".info").css({'font-size': '5vh'});
+        }
+        
         $(document).ready(function () {
             $("#hi").hide(0).delay(100).fadeIn(750);
         });
@@ -281,15 +319,17 @@
             $('#search').toggleClass('rotate');
             $('#search').toggleClass('rotate2');
         });
-//        $(window).resize(function() {
-//            if ($(window).width() < 450)
-//            {
-//                $(".info").css({'font-size': '5vw'});
-//            }
-//            else {
-//                $(".info").css({'font-size': '5vh'});
-//            }
-//        });
+        
+        $(window).resize(function() {
+            if ($(window).width() < 450)
+            {
+                console.log('Hello');
+                $(".info").css({'font-size': '5vw'});
+            }
+            else {
+                $(".info").css({'font-size': '5vh'});
+            }
+        });
         
         
     </script>
