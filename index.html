@@ -1,336 +1,36 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title> Sami Sahnoune </title>
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="icon" href="me.png">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112837537-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-112837537-1');
+        </script>
+
     </head>
     <body>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            body {
-                height: 100vh;
-                font-family: "Lato Light", "Lato", sans-serif;
-            }
-            
-            #menu {                
-                float: right;
-                display: none;
-                position: fixed;
-                z-index: 1;
-                top: 12.5vh;
-                text-align: center;
-                font-size: 3vh;
-                /* change this */
-                width: 6vw;
-                right: 50px;
-                list-style: none;
-            }
-            
-            #menu li {
-                padding: 1vh;
-                list-style: none;
-            }
-            
-            #menu li:hover {
-                color: gray;
-                cursor: pointer;
-            }
-            
-            .info {
-                width: 70%;
-                font-size: 5vh;
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-            }
-
-            #header {
-                position: fixed;
-                z-index: 1;
-                height: 15%;
-                width: 100%;
-            }
-            
-            #icon {
-                cursor: pointer;
-                height: 6vh;
-                margin-left: 5vw;
-                margin-top: 5vh;
-                
-            }
-            
-            #search{
-                cursor: pointer;
-                height: 2vh;
-/*                width: 2vw;*/
-                float: right;
-                margin-right: 5vw;
-                margin-top: 8vh;
-            }
-            
-            #me {
-                background-color: #EC644B;
-            }
-            
-            #me_info {
-                color: white;
-            }
-            
-            .invert {
-               -webkit-filter: invert(1);
-               filter: invert(1);
-            }
-            
-            #future {
-                position: relative;
-                background-color: #3498db;
-            }
-            
-            #future_info {
-                width: 70%;
-                font-size: 5vh;
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-                color: white;
-            }
-/*
-            #projects {
-                position: relative;
-                background-color: #3498db;
-            }
-            
-            #projects_info {
-                width: 70%;
-                font-size: 5vh;
-                position: absolute;
-                text-align: center;
-                top: 20%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-                color: white;
-            }
-*/
-            
-            section {
-                height: 100vh;
-                position: relative;
-            }
-            
-            #contact_info {
-                width: 70%;
-                font-size: 5vh;
-                position: absolute;
-                text-align: center;
-                top: 40%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-            }
-            
-            #social {
-                width: 70%;
-                font-size: 5vh;
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                left: 47.5%;                
-                transform: translate(-50%, -50%);
-                z-index: 1;
-            }
-            
-            #social, #social li {
-                list-style: none;
-                display: inline;
-                margin-left: 2vw;
-            }
-            
-            .rotate {
-                transform: rotate(-180deg);
-                /*transform: rotate(180deg);*/
-                -webkit-transition:0.5s;
-                -moz-transition:0.5s;
-                -ms-transition:0.5s;
-                -o-transition:0.5s;
-                transition:0.5s;
-            }
-            .rotate2 {
-                transform: rotate(0deg);
-                -webkit-transition:0.5s;
-                -moz-transition:0.5s;
-                -ms-transition:0.5s;
-                -o-transition:0.5s;
-                transition:0.5s;
-            }
-            
-            li img {
-                height: 5vh;
-            }
-            
-/*
-            #gallery {
-                position: absolute;
-                text-align: justify;
-                top: 50%;
-                width: 75%;
-                left: 50%;                
-                transform: translate(-50%, -50%);
-                margin: 0 auto;
-            }
-            
-            #gallery ul li {
-                font-size: 3vh;
-                text-align: justify;
-                color: white;
-                list-style: none;
-            }
-            
-            #project_title {
-                font-weight: 800;
-            }
-            
-            #gallery ul li p {
-                padding: 10px;
-                color: white;
-            }
-*/
-        </style>
-        <div id = "menu">
-            <ul>
-                <li>home</li>
-                <li>me</li>
-                <li>work</li>
-                <li>future</li>
-                <li>contact</li>
-            </ul>
-        </div>
+    <div id = "container">
+        <!-- top -->
         <div id = "header">
-            <img src = "me.png" class = "pic" id = "icon">
-            <img src = "caret.png" class = "pic rotate2" id = "search" >
+            <h2>Sami Sahnoune</h2>
+            <p>Computer Science and Physics | <a href = "https://www.mcgill.ca/" target = "_blank">McGill University</a></p>
         </div>
-        <section id = "home">
-            <p id = "hi" class = "info"> hi, i'm <span style = "border-bottom: 2px solid #EC644B">sami</span> </p>
-        </section>
-        <section id = "me">
-            <p id = "me_info" class = "info"> My name is Sami Sahnoune, and I am a rising junior at McGill University studying Physics and Computer Science.</p>
-        </section>
-        <section id = "work">
-            <p id = "work_info" class = "info"> This past summer, I interned at the NASA Johnson Space Center on the Mission and Planning Integration contract working on an International Space Station stowage tool.</p>
-        </section>
-        <section id = "future">
-            <p id = "future_info" class = "info"> My interests include data analysis and software development, and I am currently seeking a relevant internship opportunity for Summer 2018.
-<!--
-            <div id = "gallery">
-                <ul>
-                    <li> 
-                        <span id = 'project_title'>SOTER</span>
-                        <p> 
-                            Soter is an Android application built during the 2017 Concordia University ConUHacks Hackathon. Over the course of the weekend, we developed an introductory prototype of a security app. Read more about it 
-                            <a href = "https://devpost.com/software/soter-io" target = "_blank">here</a>.
-                        </p>
-                    </li>
-                    <li> 
-                        <span id = 'project_title'>EPOCH</span>
-                        <p>
-                            Epoch is a new-tab Chrome extension built to motivate myself while browsing the web. This project expanded my interest in web design and APIs.
-                        </p>
-                    </li>
-                    <li>
-                        <span id = 'project_title'>CONVOLUTE</span>
-                        <p>
-                            Convolute is a Python filtering program hosted on the web. Given a bitmap image, a filter is applied using a convolution matrix. Try it <a href = "http://cs.mcgill.ca/~ssahno/A5Q3_template.html" target = "_blank">here</a>.
-                        </p>
-                    </li>
-                </ul>
-            </div>
--->
-        </section>
-        <section id = "contact">
-            <p id = "contact_info" class = "info"> Contact me! </p>
-            <ul id = "social">
-                <li><a href = "mailto:sami.sahnoune@mail.mcgill.ca" target = "_blank"><img src="email.png"></a></li>
-                <li><a href = "https://www.linkedin.com/in/samisahnoune" target = "_blank"><img src="linkedin.png"></a></li>
-                <li><a href = "https://www.facebook.com/samiwsahn" target = "_blank"><img src="facebook.png"></a></li>
-                <li><a href = "_resume.pdf" target = "_blank"><img src="resume.png" target = "_blank"></a></li>
-            </ul>
-        </section>
+        <div class = "info">
+            <p> Hi there! My name is Sami. I'm an aspiring software engineer. </p><br/>
+            <p> I am currently looking to join an awesome team as a software engineer intern for summer '18. <a href = "_resume.pdf" target= "_blank">Check out my resume</a> and <a href = "mailto: sami.sahnoune@mail.mcgill.ca" target= "_blank">shoot me an email</a>.</p>
+        </div>
+        <div class = "info">
+            <h3> Past </h3>
+            <p> Systems Engineering Intern, Johnson Space Center </p>
+            <p> Technical Specialist Intern, Johnson Space Center </p>
+        </div>
+        <p class = "social"> <a href = "mailto: sami.sahnoune@mail.mcgill.ca" target= "_blank"> Email </a> </p>
+        <p class = "social"> <a href = "https://www.linkedin.com/in/samisahnoune" target= "_blank"> LinkedIn </a> </p>
+        <p class = "social"> <a href = "https://www.m.me/samiwsahn" target= "_blank"> Messenger </a> </p>
     </body>
-    <script>
-        $(document).ready(function () {
-            console.log($(window).width());
-        });
-        if ($(window).width() < 450)
-            {
-                console.log('Hello');
-                $(".info").css({'font-size': '5vw'});
-            }
-            else {
-                $(".info").css({'font-size': '5vh'});
-        }
-        
-        $(document).ready(function () {
-            $("#hi").hide(0).delay(100).fadeIn(750);
-        });
-        
-        var topofDiv = $("section").offset().top;
-        var height = $("section").outerHeight();
-        var sections = document.getElementsByTagName("section");
-        
-        // sloppy, fix
-        var section_height = sections[0].offsetHeight;
-        $(window).scroll(function(){
-            if(($(window).scrollTop() > ((0 + height) - 50) && $(window).scrollTop() < ((section_height + height) - 50)) || $(window).scrollTop() > ((2*section_height + height) - 50) && $(window).scrollTop() < ((3*section_height + height) - 50)){
-                $("#header img").addClass("invert");
-                $("#menu").addClass("invert");
-            }
-            else {
-                $("#header img").removeClass("invert");
-                $("#menu").removeClass("invert");
-            }
-        });
-        
-        $("#search").click(function(){
-            $('#search').toggleClass('rotate');
-            $('#search').toggleClass('rotate2');
-            $("#menu").slideToggle(500);
-        });
-        
-        $("#icon").click(function() {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 700);
-        });
-        
-        $("#menu").on('click','li',function(){
-            $('html, body').animate({
-                scrollTop: $('#'+$(this).text()).offset().top}, 750);
-            $("#menu").slideToggle(500);
-            $('#search').toggleClass('rotate');
-            $('#search').toggleClass('rotate2');
-        });
-        
-        $(window).resize(function() {
-            if ($(window).width() < 450)
-            {
-                console.log('Hello');
-                $(".info").css({'font-size': '5vw'});
-            }
-            else {
-                $(".info").css({'font-size': '5vh'});
-            }
-        });
-        
-        
-    </script>
+    </div>
 </html>
