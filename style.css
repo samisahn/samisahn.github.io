@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: CMU Concrete, serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+h2, h3 {
+    font-weight: 100;
+}
+
+#container {
+    display: block;
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+#header {
+    margin-bottom: 50px;
+}
+
+.info {
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+.social {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a {
+    color: black;
+}
